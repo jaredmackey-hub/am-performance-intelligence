@@ -351,7 +351,7 @@ function buildCoaching(){
   Object.keys(COACH).forEach(function(r){var d=D[r];var arr=COACH[r];var div=document.createElement("div");div.className="rc";var cc=d.churns<=2?"var(--g)":d.churns<=6?"var(--o)":"var(--e)";var ac=d.atr>=10?"var(--g)":d.atr>=5?"var(--o)":"var(--e)";div.innerHTML="<div class='rn'>"+r+"</div><div class='rm'>"+d.t+" · WR: <strong>"+d.wr+"%</strong> · Exp.WR: <strong>"+d.ewr+"%</strong> · Churns: <strong style='color:"+cc+";'>"+d.churns+"</strong> · At-Risk: <strong style='color:"+ac+";'>"+d.atr+"</strong></div><div class='ri'><strong style='color:var(--mu);'>Gap: </strong>"+arr[0]+"</div><div class='ri'><strong style='color:var(--e);'>Action: </strong>"+arr[1]+"</div>";c.appendChild(div);});
 }
 
-window.addEventListener("load",buildAll);
+if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",buildAll);}else{buildAll();}
 </script>
 </body>
 </html>
