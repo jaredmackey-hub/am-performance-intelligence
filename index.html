@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<script type="application/json" id="cowork-artifact-meta">
-{
-  "name": "Am Performance Intelligence",
-  "schemaVersion": 1
-}
-</script>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,28 +10,27 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;background:var(--bg);color:var(--tx);}
 .shell{display:flex;flex-direction:column;height:100vh;overflow:hidden;}
-.hdr{background:linear-gradient(135deg,#0f172a 0%,#1e293b 55%,#1e3a5f 100%);color:#fff;padding:8px 14px 0;flex-shrink:0;}
-.hdr-row{display:flex;align-items:center;gap:10px;margin-bottom:7px;}
-.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:.5px;}
-.pill-new{background:rgba(34,197,94,.25);border:1px solid rgba(34,197,94,.4);border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:.5px;color:#86efac;}
+.hdr{background:linear-gradient(135deg,#0f172a,#1e293b 55%,#1e3a5f);color:#fff;padding:8px 14px 0;flex-shrink:0;}
+.hdr-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:2px 8px;font-size:9px;font-weight:700;}
+.pill-g{background:rgba(34,197,94,.22);border-color:rgba(34,197,94,.4);color:#86efac;}
 .hdr-row h1{font-size:14px;font-weight:700;}
 .hdr-row p{font-size:9px;color:rgba(255,255,255,.45);margin-top:1px;}
-.emily-strip{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:8px 8px 0 0;padding:9px 12px;}
+.estrip{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:8px 8px 0 0;padding:9px 12px;}
 .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--e),#c0392b);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex-shrink:0;border:2px solid rgba(255,255,255,.22);}
 .ei{flex:1;min-width:0;}.ei h2{font-size:13px;font-weight:700;white-space:nowrap;}
 .ei .sub{font-size:9px;color:rgba(255,255,255,.42);margin-top:1px;}
 .bdgs{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;}
 .bdg{padding:2px 7px;border-radius:20px;font-size:9px;font-weight:700;}
-.bg{background:#fbbf24;color:#1a1a2e;}.bb{background:rgba(34,197,94,.2);color:#86efac;border:1px solid rgba(34,197,94,.3);}
-.bc{background:rgba(59,110,245,.22);color:#93c5fd;border:1px solid rgba(59,110,245,.35);}
-.bo{background:rgba(245,158,11,.2);color:#fcd34d;border:1px solid rgba(245,158,11,.3);}
-.bfire{background:rgba(233,69,96,.2);color:#fca5a5;border:1px solid rgba(233,69,96,.3);}
+.by{background:#fbbf24;color:#1a1a2e;}.bg{background:rgba(34,197,94,.2);color:#86efac;border:1px solid rgba(34,197,94,.3);}
+.bb{background:rgba(59,110,245,.22);color:#93c5fd;border:1px solid rgba(59,110,245,.35);}
+.br{background:rgba(233,69,96,.2);color:#fca5a5;border:1px solid rgba(233,69,96,.3);}
 .krow{display:flex;flex-shrink:0;}.kpi{text-align:center;padding:0 9px;}
 .kpi .v{font-size:17px;font-weight:800;line-height:1;}.kpi .l{font-size:8px;color:rgba(255,255,255,.42);margin-top:2px;}
 .kpi .s{font-size:8px;color:#86efac;margin-top:1px;}.ksep{width:1px;background:rgba(255,255,255,.1);margin:3px 0;}
 .tabs{display:flex;background:#1e293b;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;overflow-x:auto;}
 .tabs::-webkit-scrollbar{height:2px;}
-.tab{padding:8px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.42);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s;user-select:none;}
+.tab{padding:8px 13px;font-size:11px;font-weight:500;color:rgba(255,255,255,.42);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;user-select:none;}
 .tab:hover{color:rgba(255,255,255,.8);}.tab.on{color:#fff;border-bottom-color:var(--e);}
 .body{flex:1;overflow-y:auto;padding:12px 14px;}
 .panel{display:none;}.panel.on{display:block;}
@@ -51,10 +44,10 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sa
 .card .ct{font-size:9px;font-weight:600;margin-top:4px;}.up{color:var(--g);}.dn{color:var(--e);}.nt{color:var(--o);}
 .cc{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:11px;margin-bottom:10px;}
 .cc h3{font-size:11px;font-weight:700;margin-bottom:2px;}.cc p{font-size:9px;color:var(--mu);margin-bottom:8px;line-height:1.4;}
-.cc .ch-wrap{position:relative;height:190px;}.cc .ch-wrap canvas{position:absolute;top:0;left:0;width:100%!important;height:100%!important;}
-.tw{background:var(--cd);border:1px solid var(--bd);border-radius:8px;overflow:auto;margin-bottom:10px;max-height:400px;}
+.ch-wrap{position:relative;height:190px;}.ch-wrap canvas{position:absolute;top:0;left:0;width:100%!important;height:100%!important;}
+.tw{background:var(--cd);border:1px solid var(--bd);border-radius:8px;overflow:auto;margin-bottom:10px;max-height:380px;}
 table{width:100%;border-collapse:collapse;font-size:10px;}
-th{padding:6px 9px;text-align:left;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--mu);background:#f8fafc;border-bottom:1px solid var(--bd);white-space:nowrap;position:sticky;top:0;z-index:2;}
+th{padding:6px 9px;text-align:left;font-size:8px;font-weight:700;text-transform:uppercase;color:var(--mu);background:#f8fafc;border-bottom:1px solid var(--bd);white-space:nowrap;position:sticky;top:0;z-index:2;}
 td{padding:6px 9px;border-bottom:1px solid #f1f5f9;white-space:nowrap;}
 tr:last-child td{border-bottom:none;}tr:hover td{background:#fafcff;}
 .er td{background:#fff8f5!important;font-weight:600;}.er td:first-child{border-left:3px solid var(--e);}
@@ -62,20 +55,17 @@ tr:last-child td{border-bottom:none;}tr:hover td{background:#fafcff;}
 .rk1{background:#fbbf24;color:#1a1a2e;}.rk2{background:#e2e8f0;color:#334155;}.rk3{background:#cd7f32;color:#fff;}.rkn{background:#f1f5f9;color:var(--mu);}
 .ins{border-radius:7px;padding:9px 11px;margin-bottom:8px;display:flex;gap:8px;align-items:flex-start;}
 .is{background:#fefce8;border:1px solid #fde68a;}.ig{background:#f0fdf4;border:1px solid #bbf7d0;}
-.iw{background:#fff7ed;border:1px solid #fed7aa;}.ii{background:#eff6ff;border:1px solid #bfdbfe;}.ir{background:#fff1f2;border:1px solid #fecdd3;}
+.iw{background:#fff7ed;border:1px solid #fed7aa;}.ii{background:#eff6ff;border:1px solid #bfdbfe;}
 .ins-ic{font-size:13px;flex-shrink:0;line-height:1.5;}
 .ins-bd strong{font-size:10px;font-weight:700;display:block;margin-bottom:2px;}
 .ins-bd p{font-size:10px;color:#475569;line-height:1.5;}
 .pb{height:4px;background:#f1f5f9;border-radius:3px;overflow:hidden;margin-top:5px;}
-.pf{height:100%;border-radius:3px;}.pfb{background:linear-gradient(90deg,#3b6ef5,#6366f1);}
-.pfg{background:linear-gradient(90deg,#22c55e,#16a34a);}.pfo{background:linear-gradient(90deg,#f59e0b,#d97706);}
-.pfp{background:linear-gradient(90deg,#8b5cf6,#7c3aed);}.pfr{background:linear-gradient(90deg,#e94560,#dc2626);}
+.pf{height:100%;border-radius:3px;}
 .mr{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid #f1f5f9;font-size:10px;}
 .mr:last-child{border-bottom:none;}.mv{font-weight:700;}
 .tg{display:inline-block;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:600;}
 .tgg{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;}.tgy{background:#fefce8;color:#854d0e;border:1px solid #fde68a;}
 .tgr{background:#fff1f2;color:#be123c;border:1px solid #fecdd3;}.tgb{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;}
-.tgp{background:#faf5ff;color:#6b21a8;border:1px solid #e9d5ff;}
 .rc{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:10px 12px;margin-bottom:8px;}
 .rc .rn{font-size:11px;font-weight:700;}.rc .rm{font-size:9px;color:var(--mu);margin-bottom:5px;}
 .rc .ri{display:flex;gap:5px;font-size:10px;color:#475569;margin-bottom:3px;line-height:1.4;}
@@ -83,45 +73,42 @@ tr:last-child td{border-bottom:none;}tr:hover td{background:#fafcff;}
 .sr{background:var(--cd);border:1px solid var(--bd);border-radius:8px;padding:11px;margin-bottom:8px;}
 .sr h4{font-size:11px;font-weight:700;margin-bottom:3px;}.sr p{font-size:10px;color:#475569;line-height:1.5;}
 .sr code{background:#eff6ff;padding:1px 5px;border-radius:3px;font-family:monospace;font-size:9px;color:#3b6ef5;}
-.callout{background:linear-gradient(135deg,#fff9e6,#fffbf0);border:1px solid #fde68a;border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
-.callout .icon{font-size:22px;flex-shrink:0;}.callout .text strong{font-size:12px;font-weight:800;color:#1a1a2e;display:block;}
-.callout .text span{font-size:10px;color:#64748b;}
-.note{font-size:9px;color:var(--mu);font-style:italic;margin-bottom:6px;}
+.callout{background:linear-gradient(135deg,#fff9e6,#fffbf0);border:2px solid #fde68a;border-radius:10px;padding:11px 13px;margin-bottom:10px;display:flex;align-items:flex-start;gap:10px;}
+.callout .ic{font-size:22px;flex-shrink:0;}.callout strong{font-size:12px;font-weight:800;color:var(--tx);display:block;margin-bottom:2px;}
+.callout p{font-size:10px;color:#475569;line-height:1.5;}
 .ftr{text-align:center;padding:5px 0;font-size:9px;color:var(--mu);flex-shrink:0;background:var(--bg);border-top:1px solid var(--bd);}
 </style>
 </head>
 <body>
 <div class="shell">
-
-<!-- HEADER -->
 <div class="hdr">
   <div class="hdr-row">
     <div>
       <div style="display:flex;align-items:center;gap:7px;margin-bottom:3px;">
         <span class="pill">Maxio Internal</span><span class="pill">April 29, 2026</span>
-        <span class="pill-new">✦ SFDC Enriched · Commissionable ARR Corrected</span>
+        <span class="pill pill-g">✦ SFDC Enriched · Commissionable ARR</span>
       </div>
       <h1>AM Performance Intelligence</h1>
-      <p>Emily Jones deep-dive · 11-rep benchmark · Gong · Maxio NRR · SFDC Churn + Expansion (Commissionable ARR) + Activity · Domo</p>
+      <p>Emily Jones · 11-rep benchmark · Gong + Maxio NRR + SFDC Churn/Expansion/Activity · Domo</p>
     </div>
   </div>
-  <div class="emily-strip">
+  <div class="estrip">
     <div class="av">EJ</div>
     <div class="ei">
       <h2>Emily Jones <span style="font-size:9px;font-weight:400;opacity:.45;">· Sr. Account Manager · Hired Feb 2026</span></h2>
-      <div class="sub">Account Management Team · 3 months tenure · Commissionable Expansion ARR = Recognized ARR</div>
+      <div class="sub">Account Management · 3 months tenure · Commissionable Deal Value = Recognized Expansion ARR</div>
       <div class="bdgs">
-        <span class="bdg bg">⭐ Top Performer</span>
-        <span class="bdg bb">95.8% Gross Retention</span>
-        <span class="bdg bc">74.2% Overall Win Rate · #2</span>
-        <span class="bdg bg">#1 Expansion ARR Win Rate: 37.0%</span>
-        <span class="bdg bfire">🔥 #1 At-Risk Interventions: 18</span>
+        <span class="bdg by">⭐ Top Performer</span>
+        <span class="bdg bg">95.8% Gross Retention</span>
+        <span class="bdg bb">#2 Overall Win Rate: 74.2%</span>
+        <span class="bdg by">#1 Expansion ARR Win Rate: 37.0%</span>
+        <span class="bdg br">🔥 #1 At-Risk Interventions: 18</span>
       </div>
     </div>
     <div class="krow">
       <div class="kpi"><div class="v">74.2%</div><div class="l">Win Rate</div><div class="s">#2 team</div></div>
       <div class="ksep"></div>
-      <div class="kpi"><div class="v">37.0%</div><div class="l">Exp.ARR WR</div><div class="s">#1 team</div></div>
+      <div class="kpi"><div class="v">37.0%</div><div class="l">Exp.WR</div><div class="s">#1 team</div></div>
       <div class="ksep"></div>
       <div class="kpi"><div class="v">$72.6K</div><div class="l">Exp.ARR Won</div><div class="s">Q1 · 20 wins</div></div>
       <div class="ksep"></div>
@@ -131,368 +118,240 @@ tr:last-child td{border-bottom:none;}tr:hover td{background:#fafcff;}
     </div>
   </div>
 </div>
-
-<!-- TABS -->
 <div class="tabs">
-  <div class="tab on" onclick="switchTab('overview',this)">📊 Overview</div>
-  <div class="tab" onclick="switchTab('gong',this)">📞 Call Intelligence</div>
-  <div class="tab" onclick="switchTab('sfdc',this)">🗂 SFDC Intelligence</div>
-  <div class="tab" onclick="switchTab('portfolio',this)">💼 Portfolio Health</div>
-  <div class="tab" onclick="switchTab('winrates',this)">🏆 Win Rates</div>
-  <div class="tab" onclick="switchTab('team',this)">👥 Team Scorecard</div>
-  <div class="tab" onclick="switchTab('coaching',this)">💡 Coaching Playbook</div>
-  <div class="tab" onclick="switchTab('gaps',this)">📋 Data Gaps</div>
+  <div class="tab on" onclick="show('overview',this)">📊 Overview</div>
+  <div class="tab" onclick="show('gong',this)">📞 Call Intelligence</div>
+  <div class="tab" onclick="show('sfdc',this)">🗂 SFDC Intelligence</div>
+  <div class="tab" onclick="show('portfolio',this)">💼 Portfolio Health</div>
+  <div class="tab" onclick="show('winrates',this)">🏆 Win Rates</div>
+  <div class="tab" onclick="show('team',this)">👥 Team Scorecard</div>
+  <div class="tab" onclick="show('coaching',this)">💡 Coaching</div>
+  <div class="tab" onclick="show('gaps',this)">📋 Gaps</div>
 </div>
-
 <div class="body">
-
-<!-- OVERVIEW -->
 <div id="p-overview" class="panel on">
-  <div class="sl">Key Findings — Validated by Gong · Maxio NRR · SFDC (Commissionable ARR = Recognized ARR)</div>
-  <div class="callout">
-    <div class="icon">🏆</div>
-    <div class="text">
-      <strong>CORRECTED: Emily is #1 on the Team for Expansion ARR Win Rate at 37.0% ($72.6K recognized)</strong>
-      <span>Previous calculation used invoice Amount — now corrected to Commissionable Deal Value (recognized expansion ARR). Using real ARR, Emily leads the entire team. Darwin Williams (32.6%) and Jory Johnson (30.8%) are next. Nathan Lee, despite the highest pipeline, has only 25.0% expansion win rate.</span>
-    </div>
-  </div>
-  <div class="callout" style="background:linear-gradient(135deg,#f0fdf4,#f7fffe);border-color:#bbf7d0;">
-    <div class="icon">🔥</div>
-    <div class="text">
-      <strong>#1 At-Risk Interventions on the Team: 18 Proactive Actions in 90 Days</strong>
-      <span>SFDC Activity data confirms Emily logs the most at-risk account actions. Next: Darwin (10), Maya/Regan (6 each). Nathan Lee has ZERO at-risk interventions despite 34 invoice alerts. This gap — activity without at-risk focus — explains much of the churn differential.</span>
-    </div>
-  </div>
+  <div class="callout"><div class="ic">🏆</div><div><strong>Emily is #1 for Expansion ARR Win Rate: 37.0% ($72.6K recognized Q1 2026)</strong><p>Using Commissionable Deal Value (recognized ARR). Emily leads the team. Darwin (32.6%) and Jory (30.8%) follow. Nathan Lee converts at only 25.0% despite the highest pipeline volume.</p></div></div>
+  <div class="callout" style="background:linear-gradient(135deg,#f0fdf4,#f7fffe);border-color:#86efac;"><div class="ic">🔥</div><div><strong>#1 At-Risk Interventions: 18 Proactive Actions in 90 Days</strong><p>Emily leads the team. Darwin (10), Maya/Regan (6). Nathan Lee: zero at-risk interventions despite 34 invoice alerts and 94 Gong calls. Activity ≠ proactive coverage.</p></div></div>
   <div class="g3">
-    <div class="ins is"><div class="ins-ic">🚀</div><div class="ins-bd"><strong>Fastest Ramp (220% Feb→Apr)</strong><p>Gong target grew 3.2× in 90 days. Steepest ramp of any tracked rep in their first quarter. April target ($27K) already matches mid-tenure reps like Maya.</p></div></div>
-    <div class="ins ig"><div class="ins-ic">👂</div><div class="ins-bd"><strong>#1 Listener + Strong Call Volume</strong><p>35% talk ratio (tied best) + 70 Gong calls (2nd on team). Rare combination: quality AND quantity. Customers average 132s story on Emily's calls — highest trust signal.</p></div></div>
-    <div class="ins iw"><div class="ins-ic">⚠️</div><div class="ins-bd"><strong>Watch: Invoice Alert Exposure</strong><p>Emily's accounts trigger 29 invoice/dunning alerts — moderate exposure. She's responding (18 at-risk actions) but 32 ticket alerts shows some accounts are struggling operationally.</p></div></div>
+    <div class="ins is"><div class="ins-ic">🚀</div><div class="ins-bd"><strong>Fastest Ramp: 220% Feb→Apr</strong><p>Target grew 3.2× in 90 days. Steepest ramp of any tracked rep in their first quarter.</p></div></div>
+    <div class="ins ig"><div class="ins-ic">👂</div><div class="ins-bd"><strong>#1 Listener + High Call Volume</strong><p>35% talk ratio + 70 Gong calls. Customers average 132s story length — highest trust signal.</p></div></div>
+    <div class="ins iw"><div class="ins-ic">⚠️</div><div class="ins-bd"><strong>Watch: Invoice Alert Exposure</strong><p>32 ticket alerts on Emily's accounts. She's responding (18 at-risk actions) but needs continued attention.</p></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><h3>Expansion ARR Win Rate — Commissionable (Recognized) ARR</h3><p>Emily leads at 37.0%. This is the corrected view using actual recognized ARR, not invoice amount. Nathan Lee's high volume but 25.0% rate stands out as an efficiency gap.</p><div class="ch-wrap"><canvas id="c-expwr-ov"></canvas></div></div>
-    <div class="cc"><h3>At-Risk Interventions by AM (SFDC Activity)</h3><p>Emily (18) leads by a wide margin. The correlation between at-risk interventions and low churn count is the clearest pattern in the entire dataset.</p><div class="ch-wrap"><canvas id="c-atrisk-ov"></canvas></div></div>
+    <div class="cc"><h3>Expansion ARR Win Rate — Q1 2026 (Commissionable ARR)</h3><p>Emily leads at 37.0%. Charlie (14.7%) and Nathan (25.0%) are the biggest gaps.</p><div class="ch-wrap"><canvas id="c-expwr-ov"></canvas></div></div>
+    <div class="cc"><h3>At-Risk Interventions by AM (SFDC Activity)</h3><p>Emily (18) leads. Nathan Lee: 0 interventions despite 34 invoice alerts — pure reactive management.</p><div class="ch-wrap"><canvas id="c-atrisk-ov"></canvas></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><h3>Churns by AM — Q1 2026 (SFDC)</h3><p>Darwin (15) and Jory (13) are urgent. Emily (4) and Maya (1) are protecting their books. Kevin Cook (0) is too early to evaluate.</p><div class="ch-wrap"><canvas id="c-churns-ov"></canvas></div></div>
-    <div class="cc"><h3>Gong Target Ramp — Feb → Apr 2026</h3><p>Emily's steep ramp (red) vs. peers. Only Maya Kesler shows a comparable ramp trajectory in her targets.</p><div class="ch-wrap"><canvas id="c-ramp-ov"></canvas></div></div>
+    <div class="cc"><h3>Q1 2026 Churns by AM (SFDC)</h3><p>Darwin (15) and Jory (13) urgent. Emily (4) and Maya (1) protecting their books.</p><div class="ch-wrap"><canvas id="c-churns-ov"></canvas></div></div>
+    <div class="cc"><h3>Gong Target Ramp — Feb → Apr 2026</h3><p>Emily's steep ramp vs. peers. Only Maya shows comparable trajectory from a similar starting point.</p><div class="ch-wrap"><canvas id="c-ramp-ov"></canvas></div></div>
   </div>
 </div>
-
-<!-- GONG -->
 <div id="p-gong" class="panel">
-  <div class="sl">Gong Call Intelligence — Communication Style + Volume</div>
+  <div class="sl">Gong Call Intelligence</div>
   <div class="g4">
-    <div class="card"><div class="ch">Talk Ratio</div><div class="cn">35%</div><div class="cs">Listens 65% of every call</div><div style="display:flex;justify-content:space-between;font-size:8px;color:var(--mu);margin-top:5px;"><span>Talk</span><span>Listen 65%</span></div><div class="pb"><div class="pf pfb" style="width:35%"></div></div><div class="ct up">↑ Tied #1 best listener</div></div>
-    <div class="card"><div class="ch">Patience Score</div><div class="cn">0.47</div><div class="cs">Scale 0–1 · higher = more patient</div><div class="pb" style="margin-top:8px;"><div class="pf pfp" style="width:47%"></div></div><div class="ct up">↑ #3 on team (avg 0.44)</div></div>
-    <div class="card"><div class="ch">Gong Calls (90d)</div><div class="cn">70</div><div class="cs">Recorded customer calls</div><div class="pb" style="margin-top:8px;"><div class="pf pfg" style="width:37%"></div></div><div class="ct up">↑ 2nd (Regan Wong: 187)</div></div>
-    <div class="card"><div class="ch">Customer Story</div><div class="cn">132s</div><div class="cs">Avg customer story length on calls</div><div class="pb" style="margin-top:8px;"><div class="pf pfo" style="width:62%"></div></div><div class="ct up">↑ Strong trust signal</div></div>
+    <div class="card"><div class="ch">Talk Ratio</div><div class="cn" style="color:var(--e);">35%</div><div class="cs">Listens 65% of every call</div><div class="pb" style="margin-top:8px;"><div class="pf" style="width:35%;background:linear-gradient(90deg,var(--e),#c0392b);"></div></div><div class="ct up">↑ Tied #1 best listener</div></div>
+    <div class="card"><div class="ch">Patience Score</div><div class="cn">0.47</div><div class="cs">Scale 0–1 · higher = more patient</div><div class="pb" style="margin-top:8px;"><div class="pf" style="width:47%;background:linear-gradient(90deg,var(--p),#7c3aed);"></div></div><div class="ct up">↑ #3 on team</div></div>
+    <div class="card"><div class="ch">Gong Calls (90d)</div><div class="cn">70</div><div class="cs">2nd on team (Regan: 187)</div><div class="pb" style="margin-top:8px;"><div class="pf" style="width:37%;background:linear-gradient(90deg,var(--g),#16a34a);"></div></div><div class="ct up">↑ Quality + quantity</div></div>
+    <div class="card"><div class="ch">Customer Story</div><div class="cn">132s</div><div class="cs">Avg customer story on calls</div><div class="pb" style="margin-top:8px;"><div class="pf" style="width:62%;background:linear-gradient(90deg,var(--o),#d97706);"></div></div><div class="ct up">↑ High trust signal</div></div>
   </div>
   <div class="g2">
-    <div class="cc"><h3>Radar — Emily vs. Team Average</h3><p>Emily leads on listening and patience. Combined with strong Gong call volume, this creates a powerful pattern: listen often and listen well.</p><div class="ch-wrap" style="height:200px;"><canvas id="c-radar"></canvas></div></div>
-    <div class="cc"><h3>Gong Calls Recorded by AM (90 days)</h3><p>Regan Wong (187) is an outlier. Emily (70) is comfortably above team midfield. Charlie Passannante (0) remains a full blind spot.</p><div class="ch-wrap"><canvas id="c-calls"></canvas></div></div>
+    <div class="cc"><h3>Talk Ratio — Lower = Better Listener</h3><p>Emily (35%) tied for best. Robert Turner (45%) and Jory (43%) talk too much — correlates with churn.</p><div class="ch-wrap"><canvas id="c-talk"></canvas></div></div>
+    <div class="cc"><h3>Gong Calls Recorded (90 days)</h3><p>Regan Wong (187) outlier. Emily (70) comfortably 2nd tier. Charlie Passannante (0) = zero visibility.</p><div class="ch-wrap"><canvas id="c-calls"></canvas></div></div>
   </div>
-  <div class="sl">Full Gong Metrics Table</div>
-  <div class="tw"><table><thead><tr><th>Rep</th><th>Talk %</th><th>Listen %</th><th>Patience</th><th>Interactivity</th><th>Monologue (s)</th><th>Customer Story (s)</th><th>Calls 90d</th></tr></thead><tbody id="tb-gong"></tbody></table></div>
-  <div class="ins is"><div class="ins-ic">🔑</div><div class="ins-bd"><strong>Emily's Call Signature: "Curious Listener at Scale"</strong><p>35% talk ratio + 0.47 patience + 70 calls in 90 days = a rep who consistently creates space for customers to talk. The 132s average customer story length means customers are opening up — disclosing needs and risks they wouldn't share with high-talk-ratio reps.</p></div></div>
+  <div class="sl">Full Gong Metrics</div>
+  <div class="tw"><table><thead><tr><th>Rep</th><th>Talk%</th><th>Listen%</th><th>Patience</th><th>Interactivity</th><th>Monologue(s)</th><th>Cust.Story(s)</th><th>Calls 90d</th></tr></thead><tbody id="tb-gong"></tbody></table></div>
 </div>
-
-<!-- SFDC INTELLIGENCE -->
 <div id="p-sfdc" class="panel">
-  <div class="sl">SFDC Intelligence — 3 Live Reports · 2,215 Records · Commissionable ARR = Recognized ARR</div>
-  <div class="note">⚠️ Expansion ARR figures use Commissionable Deal Value field (recognized ARR), not invoice Amount. This is the accurate financial measure of expansion performance.</div>
-
-  <div class="ins ig"><div class="ins-ic">📂</div><div class="ins-bd"><strong>Data Sources</strong><p>① Churn & Cancellation Analysis (132 records, Jan–Apr 2026) · ② Expansion/Add-On Opportunities (597 records, Q1 2026, Commissionable Deal Value = Recognized ARR) · ③ AM Activity with Health Cards (1,486 records)</p></div></div>
-
-  <div class="sl">EXPANSION ARR — Recognized (Commissionable Deal Value)</div>
+  <div class="sl">SFDC Intelligence — 3 Reports · 2,215 Records · Commissionable ARR = Recognized ARR</div>
+  <div class="ins ii"><div class="ins-ic">📂</div><div class="ins-bd"><strong>Sources</strong><p>① Churn & Cancellation (132 records) · ② Expansion Opps (597 records, Commissionable ARR) · ③ AM Activity with Health Cards (1,486 records)</p></div></div>
   <div class="g2">
-    <div class="cc"><h3>Expansion ARR Win Rate % — Q1 2026 (Commissionable ARR)</h3><p>Emily leads at 37.0%. Darwin Williams (32.6%) and Jory Johnson (30.8%) are next. Nathan Lee (25.0%) has the most pipeline volume but lowest conversion rate.</p><div class="ch-wrap"><canvas id="c-exp-wr-sfdc"></canvas></div></div>
-    <div class="cc"><h3>Recognized Expansion ARR Won ($) — Q1 2026</h3><p>Jory Johnson leads in $ won ($76.7K) but with a worse win rate than Emily ($72.6K, 37%). Kevin Cook's high $84.6K is disproportionately from a single large deal.</p><div class="ch-wrap"><canvas id="c-exp-won-sfdc"></canvas></div></div>
+    <div class="cc"><h3>Expansion ARR Win Rate % (Commissionable)</h3><p>Emily #1 at 37.0%. Charlie (14.7%) and Nathan (25.0%) need urgent attention.</p><div class="ch-wrap"><canvas id="c-expwr-sfdc"></canvas></div></div>
+    <div class="cc"><h3>Expansion ARR Won Q1 ($K)</h3><p>Kevin Cook ($84.6K) leads $ but at 25.7% WR — concentrated deals. Emily's $72.6K at 37% WR is most efficient.</p><div class="ch-wrap"><canvas id="c-expwon-sfdc"></canvas></div></div>
   </div>
-
-  <div class="sl">Expansion ARR Detail Table — All AMs</div>
-  <div class="tw"><table><thead><tr><th>AM</th><th>Won Deals</th><th>Lost Deals</th><th>Open</th><th>Win Rate %</th><th>Recognized ARR Won</th><th>ARR Lost</th><th>ARR Open Pipeline</th><th>Avg $ Per Win</th></tr></thead><tbody id="tb-expansion"></tbody></table></div>
-
-  <div class="sl" style="margin-top:12px;">CHURN ANALYSIS — By AM & Cause</div>
+  <div class="sl">Expansion Detail</div>
+  <div class="tw"><table><thead><tr><th>AM</th><th>Won</th><th>Lost</th><th>Win Rate</th><th>ARR Won</th><th>ARR Lost</th><th>Open Pipeline</th><th>Avg/Win</th></tr></thead><tbody id="tb-exp"></tbody></table></div>
   <div class="g2">
-    <div class="cc"><h3>Churn Count by AM (Jan–Apr 2026)</h3><p>Darwin (15) and Jory (13) are alarming. Emily (4) and Maya (1) have the best churn protection despite being among the newer reps.</p><div class="ch-wrap"><canvas id="c-churn-am"></canvas></div></div>
-    <div class="cc"><h3>Team-Wide Churn Cause Breakdown</h3><p>"Unknown" (19) = largely undiagnosed. "Acquired" (12) = external/unavoidable. "Price/Too Expensive" (7) = addressable with value messaging. "Adoption Issues" = onboarding failure.</p><div class="ch-wrap"><canvas id="c-churn-cause"></canvas></div></div>
+    <div class="cc"><h3>Churns by AM — Jan–Apr 2026</h3><p>Darwin (15) and Jory (13) critical. Emily (4) and Maya (1) leading retention protection.</p><div class="ch-wrap"><canvas id="c-churns-sfdc"></canvas></div></div>
+    <div class="cc"><h3>At-Risk Interventions vs. Churns</h3><p>Emily: 18 interventions → 4 churns. Darwin: 10 → 15. Nathan: 0 → 5. The pattern is unmistakable.</p><div class="ch-wrap"><canvas id="c-atrisk-sfdc"></canvas></div></div>
   </div>
-  <div class="tw"><table><thead><tr><th>AM</th><th>Churns</th><th>#1 Cause</th><th>#2 Cause</th><th>Preventable?</th></tr></thead><tbody id="tb-churn"></tbody></table></div>
-
-  <div class="sl" style="margin-top:12px;">ACTIVITY PATTERNS — Proactive vs. Reactive</div>
-  <div class="g2">
-    <div class="cc"><h3>At-Risk Interventions (#1 Emily Differentiator)</h3><p>Emily's 18 at-risk actions is the team's highest — nearly 2× the next rep (Darwin: 10). Nathan Lee: zero at-risk actions despite 34 invoice alerts. Activity ≠ coverage.</p><div class="ch-wrap"><canvas id="c-atrisk-sfdc"></canvas></div></div>
-    <div class="cc"><h3>Invoice/Dunning Alerts by AM</h3><p>Darwin (33) and Nathan (34) have the most invoice alerts. High invoice alerts + low at-risk interventions = reactive-only management and predictive churn risk.</p><div class="ch-wrap"><canvas id="c-invoice"></canvas></div></div>
-  </div>
-  <div class="tw"><table><thead><tr><th>AM</th><th>Gong Calls</th><th>Invoice Alerts</th><th>At-Risk Actions</th><th>Ticket Alerts</th><th>Unique Accts</th><th>Proactive Ratio</th></tr></thead><tbody id="tb-activity"></tbody></table></div>
+  <div class="sl">Activity Breakdown</div>
+  <div class="tw"><table><thead><tr><th>AM</th><th>Gong Calls</th><th>Invoice Alerts</th><th>At-Risk Actions</th><th>Ticket Alerts</th><th>Unique Accts</th><th>Proactive %</th></tr></thead><tbody id="tb-act"></tbody></table></div>
 </div>
-
-<!-- PORTFOLIO -->
 <div id="p-portfolio" class="panel">
-  <div class="sl">Portfolio Health — Retention + Risk</div>
+  <div class="sl">Portfolio Health</div>
   <div class="g2">
-    <div class="cc"><h3>Gross Retention Rate (Maxio NRR)</h3><p>Emily's 95.8% is strong for an inherited book 3 months in. Maya (98%) and Kevin (100%) lead. Darwin (89.7%) and Robert (91.1%) need portfolio triage.</p><div class="ch-wrap"><canvas id="c-ret"></canvas></div></div>
-    <div class="cc"><h3>Renewable ARR by Rep ($M)</h3><p>Nathan Lee manages the largest book ($6.6M). Emily's $3.4M is appropriate for a new rep and already generating strong expansion momentum.</p><div class="ch-wrap"><canvas id="c-arr"></canvas></div></div>
+    <div class="cc"><h3>Gross Retention Rate (Maxio NRR)</h3><p>Emily 95.8% solid for 3 months in. Darwin (89.7%) and Robert (91.1%) need urgent triage.</p><div class="ch-wrap"><canvas id="c-ret"></canvas></div></div>
+    <div class="cc"><h3>Renewable ARR by Rep ($M)</h3><p>Nathan Lee largest book ($6.6M). Emily's $3.4M appropriate for a new rep with strong expansion momentum.</p><div class="ch-wrap"><canvas id="c-arr"></canvas></div></div>
   </div>
   <div class="g2">
-    <div class="cc"><h3>Green Health % — Customer Portfolio</h3><p>Charlie Passannante leads at 80.7%. Emily at 62% has clear runway — converting yellow accounts to green is her primary lever for improving retention beyond 95.8%.</p><div class="ch-wrap"><canvas id="c-green"></canvas></div></div>
-    <div class="cc"><h3>Churn Count vs. At-Risk Interventions (SFDC)</h3><p>Key relationship: Emily (18 interventions, 4 churns) vs. Darwin (10 interventions, 15 churns). The more proactive the intervention, the lower the churn.</p><div class="ch-wrap"><canvas id="c-churn-vs-atrisk"></canvas></div></div>
-  </div>
-  <div class="sl">Emily's Portfolio Breakdown</div>
-  <div class="g4">
-    <div class="card"><div class="ch">Account Health</div>
-      <div class="mr"><span><span class="tg tgg">Green</span></span><span class="mv">~60 (62%)</span></div>
-      <div class="mr"><span><span class="tg tgy">Yellow</span></span><span class="mv">~25 (26%)</span></div>
-      <div class="mr"><span><span class="tg tgr">Red</span></span><span class="mv">~1 (1%)</span></div>
-      <div class="mr"><span><span class="tg tgp">Black</span></span><span class="mv">~5 (5%)</span></div>
-    </div>
-    <div class="card"><div class="ch">Account Status</div>
-      <div class="mr"><span>Live / Active</span><span class="mv up">~75 (77%)</span></div>
-      <div class="mr"><span>At Risk</span><span class="mv nt">~9 (9%)</span></div>
-      <div class="mr"><span>At Risk – Onboarding</span><span class="mv nt">~3 (3%)</span></div>
-      <div class="mr"><span>Cancelled / Dead (Q1)</span><span class="mv dn">4 actual</span></div>
-    </div>
-    <div class="card"><div class="ch">Segment Mix</div>
-      <div class="mr"><span><span class="tg tgb">Strategic</span></span><span class="mv">~24 (25%)</span></div>
-      <div class="mr"><span><span class="tg tgg">Mid-Market</span></span><span class="mv">~57 (59%)</span></div>
-      <div class="mr"><span><span class="tg" style="background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;">Scale</span></span><span class="mv">~16 (16%)</span></div>
-    </div>
-    <div class="card"><div class="ch">Top Expansion Wins (ARR)</div>
-      <div style="font-size:10px;line-height:1.85;margin-top:4px;">
-        <div>• <strong>h2x pty ltd</strong> $11,438 Add-On</div>
-        <div>• <strong>GovInvest Inc.</strong> $11,250 Managed Svc</div>
-        <div>• <strong>ECFX</strong> $9,035 Renewal Upsell</div>
-        <div>• <strong>CFI Education</strong> $7,500 Payments</div>
-        <div>• <strong>Kalibri Labs</strong> $6,999 Payments</div>
-      </div>
-    </div>
+    <div class="cc"><h3>Green Account Health %</h3><p>Charlie leads at 80.7%. Emily at 62% — converting yellow accounts is her primary Q3 retention lever.</p><div class="ch-wrap"><canvas id="c-green"></canvas></div></div>
+    <div class="cc"><h3>Invoice Alerts by AM</h3><p>Nathan (34) and Darwin (33) highest invoice alerts. High alerts + low at-risk response = predictive churn.</p><div class="ch-wrap"><canvas id="c-invoice"></canvas></div></div>
   </div>
 </div>
-
-<!-- WIN RATES -->
 <div id="p-winrates" class="panel">
-  <div class="sl">Win Rates — Overall (All-Time) + Expansion ARR (Q1 2026 Commissionable)</div>
+  <div class="sl">Win Rates</div>
   <div class="g4">
-    <div class="card"><div class="ch">Overall Win Rate</div><div class="cn">74.2%</div><div class="cs">673 won / 907 closed · all-time</div><div class="ct up">↑ #2 on team</div></div>
-    <div class="card"><div class="ch">Exp. ARR Win Rate</div><div class="cn">37.0%</div><div class="cs">20 won / 54 closed · Q1 2026</div><div class="ct up">↑ #1 on team</div></div>
-    <div class="card"><div class="ch">Recognized Exp. ARR</div><div class="cn">$72.6K</div><div class="cs">Commissionable deal value won</div><div class="ct up">↑ $3.6K avg per win</div></div>
-    <div class="card"><div class="ch">ARR Open Pipeline</div><div class="cn">$147K</div><div class="cs">Expansion deals still open</div><div class="ct nt">→ Strong Q2 setup</div></div>
+    <div class="card"><div class="ch">Overall Win Rate</div><div class="cn" style="color:var(--b);">74.2%</div><div class="cs">673 won / 907 closed · all-time</div><div class="ct up">↑ #2 on team</div></div>
+    <div class="card"><div class="ch">Exp.ARR Win Rate</div><div class="cn" style="color:var(--e);">37.0%</div><div class="cs">20 won / 54 closed · Q1 2026</div><div class="ct up">↑ #1 on team</div></div>
+    <div class="card"><div class="ch">Exp.ARR Won</div><div class="cn" style="color:var(--g);">$72.6K</div><div class="cs">Commissionable · Q1 2026</div><div class="ct up">↑ $3.6K avg/win</div></div>
+    <div class="card"><div class="ch">Open Pipeline</div><div class="cn">$147K</div><div class="cs">Expansion deals in flight</div><div class="ct nt">→ Strong Q2 setup</div></div>
   </div>
   <div class="g2">
-    <div class="cc"><h3>Overall Win Rate — All-Time (SFDC)</h3><p>Emily #2 at 74.2%. Mike (76.7%), Maya (76.4%), Kevin (75.8%), Regan (76.1%) lead — all with significantly more tenure.</p><div class="ch-wrap"><canvas id="c-wr"></canvas></div></div>
-    <div class="cc"><h3>Expansion ARR Win Rate — Q1 2026 (Commissionable)</h3><p>Emily #1 at 37.0% using recognized ARR. This is the correct metric — Commissionable Deal Value = what actually counts toward quota.</p><div class="ch-wrap"><canvas id="c-exp-wr3"></canvas></div></div>
+    <div class="cc"><h3>Overall Win Rate Ranking (All-Time)</h3><p>Emily #2 at 74.2%. Mike (76.7%), Maya (76.4%), Kevin (75.8%), Regan (76.1%) lead — all with more tenure.</p><div class="ch-wrap"><canvas id="c-wr"></canvas></div></div>
+    <div class="cc"><h3>Expansion ARR Win Rate — Q1 2026</h3><p>Emily #1 at 37.0% using recognized commissionable ARR. Nathan Lee (25%) lowest despite most pipeline.</p><div class="ch-wrap"><canvas id="c-expwr3"></canvas></div></div>
   </div>
-  <div class="cc"><h3>Expansion ARR Won vs. Lost ($) — Q1 2026 Commissionable ARR</h3><p>Nathan Lee has the most ARR in lost deals ($393K) — high pipeline activity but poor conversion. Emily's ratio is the healthiest on the team relative to pipeline size.</p><div class="ch-wrap" style="height:200px;"><canvas id="c-exp-wonlost"></canvas></div></div>
 </div>
-
-<!-- TEAM SCORECARD -->
 <div id="p-team" class="panel">
-  <div class="sl">Full Team Scorecard — Gong + Maxio + SFDC · Commissionable ARR</div>
-  <div class="tw"><table><thead><tr><th>#</th><th>Rep</th><th>Tenure</th><th>Gross Ret.</th><th>Win Rate</th><th>Exp.ARR WR%</th><th>Exp.ARR Won</th><th>Talk%</th><th>At-Risk Act.</th><th>Q1 Churns</th><th>Gong 90d</th><th>Green%</th><th>Renew.ARR</th></tr></thead><tbody id="tb-team"></tbody></table></div>
+  <div class="sl">Full Team Scorecard</div>
+  <div class="tw"><table><thead><tr><th>#</th><th>Rep</th><th>Tenure</th><th>Gross Ret.</th><th>Win Rate</th><th>Exp.WR%</th><th>Exp.Won</th><th>Talk%</th><th>At-Risk</th><th>Churns</th><th>Calls</th><th>Green%</th><th>Renew.ARR</th></tr></thead><tbody id="tb-team"></tbody></table></div>
   <div class="g2">
-    <div class="cc"><h3>Composite Performance Index</h3><p>Weighted: win rate (25%) · retention (20%) · exp.ARR WR (20%) · at-risk actions (15%) · talk ratio (10%) · churn protection (10%). Emily ranks 1st.</p><div class="ch-wrap"><canvas id="c-comp"></canvas></div></div>
-    <div class="cc"><h3>Portfolio ARR vs. Overall Win Rate</h3><p>Emily (red) is outperforming relative to portfolio size. Nathan Lee has the largest ARR but a win rate below Emily's despite years more tenure.</p><div class="ch-wrap" style="height:200px;"><canvas id="c-bubble"></canvas></div></div>
+    <div class="cc"><h3>Composite Score</h3><p>Win rate (25%) · retention (20%) · exp.WR (20%) · at-risk actions (15%) · talk ratio (10%) · churn (10%).</p><div class="ch-wrap"><canvas id="c-comp"></canvas></div></div>
+    <div class="cc"><h3>Expansion Won ($K) vs. Churns</h3><p>Goal: top-right (high expansion, low churn). Emily leads. Darwin bottom-left: most churns, low expansion.</p><div class="ch-wrap"><canvas id="c-scatter"></canvas></div></div>
   </div>
 </div>
-
-<!-- COACHING -->
 <div id="p-coaching" class="panel">
-  <div class="sl">Emily's Playbook — 6 Behaviours Now Fully Validated by SFDC + Gong Data</div>
+  <div class="sl">Emily's Playbook — 6 Validated Behaviours</div>
   <div class="g3">
-    <div class="card" style="border-top:3px solid var(--e)"><div class="ch" style="color:var(--e);">① Listen First (Gong)</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 35% talk, 132s customer story<br><strong>Impact:</strong> Customers disclose churn signals Emily can act on with at-risk interventions.<br><strong>Cue:</strong> "Count to 3 after a customer stops talking before you respond."</div></div>
-    <div class="card" style="border-top:3px solid #e94560"><div class="ch" style="color:#e94560;">② Proactive At-Risk Coverage (SFDC)</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 18 interventions (team #1) → 4 churns<br><strong>Comparison:</strong> Darwin: 10 interventions → 15 churns. Nathan: 0 interventions → 5 churns<br><strong>Cue:</strong> "Touch every at-risk account within 48h of any SFDC alert."</div></div>
-    <div class="card" style="border-top:3px solid var(--g)"><div class="ch" style="color:var(--g);">③ #1 Expansion ARR Win Rate (SFDC)</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 37.0% recognized ARR win rate, $72.6K won, 20 deals in 90 days<br><strong>Why:</strong> Listening well surfaces expansion needs customers don't volunteer to higher-talk reps.<br><strong>Cue:</strong> "Every renewal conversation includes one expansion ask."</div></div>
+    <div class="card" style="border-top:3px solid var(--e)"><div class="ch" style="color:var(--e);">① Listen First</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 35% talk, 132s story, 0.47 patience<br><strong>Cue:</strong> "Count to 3 after the customer stops before you respond."</div></div>
+    <div class="card" style="border-top:3px solid #e94560"><div class="ch" style="color:#e94560;">② Proactive At-Risk</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 18 actions → 4 churns vs Darwin 10→15<br><strong>Cue:</strong> "Every SFDC at-risk flag = touchpoint within 48h."</div></div>
+    <div class="card" style="border-top:3px solid var(--g)"><div class="ch" style="color:var(--g);">③ #1 Exp.ARR Win Rate</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 37.0% WR, $72.6K, 20 wins Q1<br><strong>Cue:</strong> "Every renewal includes one expansion ask."</div></div>
   </div>
   <div class="g3">
-    <div class="card" style="border-top:3px solid var(--o)"><div class="ch" style="color:var(--o);">④ Protect the Book (Churn)</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 4 churns (2nd fewest), mostly "Unknown" = not structural<br><strong>Why:</strong> Proactive interventions prevent preventable churn. Emily's 18:4 intervention-to-churn ratio is the best on the team.<br><strong>Cue:</strong> "Cancellation Requested = same-day phone call, no email."</div></div>
-    <div class="card" style="border-top:3px solid var(--p)"><div class="ch" style="color:var(--p);">⑤ Record Every Call (Gong)</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 70 calls (2nd on team). Charlie = 0 calls = zero visibility.<br><strong>Why:</strong> Without recordings, coaching loops don't exist. Emily is coachable because everything is recorded.<br><strong>Cue:</strong> "Every external call on Gong. No exceptions."</div></div>
-    <div class="card" style="border-top:3px solid #06b6d4"><div class="ch" style="color:#06b6d4;">⑥ Move Yellow → Green</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Gap:</strong> 62% green (below 72% avg). Maya's 98% retention tracks with proactive yellow→green work.<br><strong>Cue:</strong> "Monthly value-delivery call for every yellow account — not just a check-in, a specific ROI conversation."</div></div>
+    <div class="card" style="border-top:3px solid var(--o)"><div class="ch" style="color:var(--o);">④ Protect the Book</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 4 churns Q1, mostly Unknown (not structural)<br><strong>Cue:</strong> "Cancellation Requested = same-day call, not email."</div></div>
+    <div class="card" style="border-top:3px solid var(--p)"><div class="ch" style="color:var(--p);">⑤ Record Every Call</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Data:</strong> 70 calls (2nd). Charlie = 0 = blind spot.<br><strong>Cue:</strong> "Every external call on Gong. No exceptions."</div></div>
+    <div class="card" style="border-top:3px solid #06b6d4"><div class="ch" style="color:#06b6d4;">⑥ Yellow→Green</div><div style="font-size:10px;line-height:1.7;margin-top:5px;"><strong>Gap:</strong> 62% green (below 72% avg)<br><strong>Cue:</strong> "Monthly ROI call for every yellow account."</div></div>
   </div>
-  <div class="sl">Individual Coaching Notes — All Reps vs. Emily's Benchmark</div>
-  <div id="coaching-cards"></div>
+  <div class="sl" style="margin-top:4px;">Coaching Notes — All Reps</div>
+  <div id="cc-cards"></div>
 </div>
-
-<!-- DATA GAPS -->
 <div id="p-gaps" class="panel">
-  <div class="sl">Remaining Data Gaps — What We Still Need</div>
-  <div class="ins ig"><div class="ins-ic">✅</div><div class="ins-bd"><strong>Closed by SFDC Exports</strong><p>Churn causes by AM ✓ · Recognized expansion ARR win rates ✓ · At-risk intervention counts ✓ · Activity type breakdown ✓ · Invoice alert exposure by AM ✓</p></div></div>
-  <div class="sr"><h4>📊 1. Post-Call Follow-Up Speed (Email Cadence)</h4><p>We know Emily does 70 Gong calls and 18 at-risk interventions, but not <em>how fast</em> she follows up. Export <code>ActivityHistory (Type=Email)</code> joined to Gong call timestamps, filter by <code>Owner = AM Team</code>, <code>Date ≥ 2026-02-01</code>. Hypothesis: Emily emails within hours of calls where churn signals appear.</p></div>
-  <div class="sr"><h4>📊 2. QBR/EBR Completion Rate by AM</h4><p>Export <code>Task WHERE Subject CONTAINS 'QBR' OR 'EBR' OR 'Business Review'</code> grouped by Account Owner. Emily's 18 at-risk interventions may include more structured QBRs than ad-hoc calls — this would confirm a structured cadence vs. reactive outreach.</p></div>
-  <div class="sr"><h4>📊 3. Health Score Trending — Yellow → Green Conversion Rate</h4><p>Export <code>Account Health Score History</code> by AM. Test: of Emily's yellow accounts that received an at-risk intervention, what % converted to green within 60 days? This quantifies whether her 18 interventions are actually working or just reactive touching.</p></div>
-  <div class="sr"><h4>📊 4. Renewal ARR Uplift Per Rep (Maxio NRR)</h4><p>Maxio NRR reports show per-customer renewable vs. renewal ARR. Emily's accounts (h2x +36%, Jasper +20%, Kepler +35%) are renewing above original ARR. Calculate this systematically for all AMs — who is growing ARR at renewal vs. flat renewal?</p></div>
-  <div class="sr"><h4>📊 5. Expansion Trigger Source — What Initiates Emily's Wins</h4><p>Of Emily's 20 Q1 expansion wins, how many had a Gong call within 7 days of opp creation? This would confirm the "listen → identify → act" loop. Join <code>Opportunity.Created Date</code> with <code>ActivityHistory (Gong calls)</code> by Account Owner.</p></div>
+  <div class="sl">Remaining Data Gaps</div>
+  <div class="ins ig"><div class="ins-ic">✅</div><div class="ins-bd"><strong>Closed</strong><p>Churn causes ✓ · Recognized exp.ARR win rates ✓ · At-risk interventions ✓ · Activity breakdown ✓ · Invoice exposure ✓</p></div></div>
+  <div class="sr"><h4>📊 1. Post-Call Follow-Up Speed</h4><p>Join <code>ActivityHistory (Email)</code> to Gong call timestamps. How fast does Emily email after at-risk calls? Hypothesis: within hours.</p></div>
+  <div class="sr"><h4>📊 2. QBR/EBR Completion Rate</h4><p>Export <code>Task WHERE Subject CONTAINS 'QBR' OR 'EBR'</code> by Owner. Are Emily's 18 at-risk interventions structured reviews or ad-hoc calls?</p></div>
+  <div class="sr"><h4>📊 3. Yellow→Green Conversion Rate</h4><p><code>Account Health Score History</code> by AM. What % of Emily's at-risk interventions actually convert yellow accounts to green within 60 days?</p></div>
+  <div class="sr"><h4>📊 4. Renewal ARR Uplift Per Rep</h4><p><code>Opportunity (Renewal)</code> ARR Prior vs. Post Closed Won. Emily's accounts (h2x +36%, Jasper +20%, Kepler +35%) — benchmark across all AMs.</p></div>
 </div>
-
-</div><!-- end body -->
-<div class="ftr">Maxio Internal · Gong · Maxio NRR · SFDC: Churn(132) + Expansion(597, Commissionable ARR) + Activity(1,486) · Apr 29, 2026 · 2,215 records processed</div>
 </div>
-
+<div class="ftr">Maxio Internal · Gong · Maxio NRR · SFDC: Churn(132)+Expansion(597,Commissionable ARR)+Activity(1,486) · Apr 29 2026 · 2,215 records</div>
+</div>
 <script>
-const D={
-  "Emily Jones":    {tenure:"Feb 2026",talk:0.35,patience:0.47,inter:7.94,mono:69.8,story:132.4,calls:70,wr:74.2,arr:3425239,ret:95.8,green:62.0,tFeb:8438,tMar:18563,tApr:27000,churns:4,expWR:37.0,expWon:72611,expLost:198325,expOpen:147267,expWonN:20,expLostN:34,atRisk:18,invoice:29,tickets:32,gong:70,accts:60},
-  "Ben Johnson":    {tenure:"Tenured",talk:0.353,patience:0.539,inter:8.61,mono:56.9,story:95.4,calls:93,wr:71.5,arr:4362206,ret:97.0,green:71.6,tFeb:21375,tMar:23513,tApr:21375,churns:6,expWR:23.7,expWon:47261,expLost:371638,expOpen:244977,expWonN:14,expLostN:45,atRisk:2,invoice:27,tickets:21,gong:37,accts:44},
-  "Charlie Passannante":{tenure:"Tenured",talk:null,patience:null,inter:null,mono:null,story:null,calls:0,wr:73.7,arr:4090235,ret:95.3,green:80.7,tFeb:27000,tMar:37125,tApr:33750,churns:2,expWR:14.7,expWon:6394,expLost:127923,expOpen:0,expWonN:5,expLostN:29,atRisk:1,invoice:22,tickets:15,gong:53,accts:54},
-  "Darwin Williams":{tenure:"Tenured",talk:0.356,patience:0.368,inter:8.52,mono:52.5,story:107.3,calls:61,wr:71.1,arr:3809369,ret:89.7,green:73.3,tFeb:21375,tMar:23513,tApr:21375,churns:15,expWR:32.6,expWon:23106,expLost:206545,expOpen:0,expWonN:14,expLostN:29,atRisk:10,invoice:33,tickets:21,gong:48,accts:62},
-  "Jory Johnson":   {tenure:"Tenured",talk:0.426,patience:0.403,inter:8.58,mono:79.0,story:109.8,calls:41,wr:71.5,arr:3664159,ret:95.1,green:56.0,tFeb:21375,tMar:23513,tApr:21375,churns:13,expWR:30.8,expWon:76680,expLost:201436,expOpen:2000,expWonN:12,expLostN:27,atRisk:5,invoice:29,tickets:10,gong:34,accts:40},
-  "Kevin Cook":     {tenure:"Apr 2026",talk:0.393,patience:0.215,inter:9.69,mono:55.8,story:97.1,calls:10,wr:75.8,arr:2534684,ret:100.0,green:75.9,tFeb:0,tMar:0,tApr:0,churns:0,expWR:25.7,expWon:84574,expLost:227875,expOpen:80675,expWonN:9,expLostN:26,atRisk:1,invoice:20,tickets:13,gong:38,accts:43},
-  "Maya Kesler":    {tenure:"Tenured",talk:0.316,patience:0.477,inter:7.97,mono:53.6,story:104.5,calls:54,wr:76.4,arr:3121820,ret:98.0,green:67.8,tFeb:10688,tMar:18810,tApr:21375,churns:1,expWR:23.3,expWon:4516,expLost:88240,expOpen:0,expWonN:7,expLostN:23,atRisk:6,invoice:19,tickets:11,gong:24,accts:41},
-  "Mike Staes":     {tenure:"Tenured",talk:0.42,patience:0.442,inter:8.82,mono:88.0,story:116.2,calls:69,wr:76.7,arr:5786298,ret:96.4,green:78.9,tFeb:0,tMar:0,tApr:0,churns:3,expWR:27.0,expWon:64734,expLost:223655,expOpen:61500,expWonN:10,expLostN:27,atRisk:2,invoice:28,tickets:28,gong:43,accts:56},
-  "Nathan Lee":     {tenure:"Tenured",talk:0.393,patience:0.45,inter:7.98,mono:98.4,story:125.6,calls:94,wr:65.0,arr:6573920,ret:97.7,green:74.0,tFeb:33750,tMar:37125,tApr:33750,churns:5,expWR:25.0,expWon:50279,expLost:393588,expOpen:0,expWonN:11,expLostN:33,atRisk:0,invoice:34,tickets:21,gong:73,accts:48},
-  "Regan Wong":     {tenure:"Tenured",talk:0.348,patience:0.414,inter:7.25,mono:87.1,story:143.6,calls:187,wr:76.1,arr:3174884,ret:97.7,green:70.5,tFeb:16875,tMar:29700,tApr:33750,churns:3,expWR:30.4,expWon:36003,expLost:199100,expOpen:57200,expWonN:14,expLostN:32,atRisk:6,invoice:29,tickets:17,gong:187,accts:46},
-  "Robert Turner":  {tenure:"Tenured",talk:0.447,patience:0.739,inter:6.66,mono:108.9,story:132.9,calls:94,wr:69.4,arr:4070609,ret:91.1,green:62.0,tFeb:21375,tMar:23513,tApr:21375,churns:11,expWR:30.8,expWon:30797,expLost:128301,expOpen:35563,expWonN:12,expLostN:27,atRisk:4,invoice:30,tickets:12,gong:26,accts:47},
+var D={
+  "Emily Jones":    {t:"Feb 2026",talk:35,pat:0.47,int:7.9,mono:70,story:132,calls:70,wr:74.2,ret:95.8,green:62,arr:3.4,churns:4,ewr:37.0,ewon:72.6,elost:198.3,eopen:147.3,ewn:20,eln:34,atr:18,inv:29,tix:32,g:70,ac:60,tF:8.4,tM:18.6,tA:27},
+  "Ben Johnson":    {t:"Tenured", talk:35,pat:0.54,int:8.6,mono:57,story:95, calls:93,wr:71.5,ret:97.0,green:72,arr:4.4,churns:6, ewr:23.7,ewon:47.3,elost:371.6,eopen:245, ewn:14,eln:45,atr:2, inv:27,tix:21,g:37,ac:44,tF:21.4,tM:23.5,tA:21.4},
+  "Charlie Passannante":{t:"Tenured",talk:null,pat:null,int:null,mono:null,story:null,calls:0,wr:73.7,ret:95.3,green:81,arr:4.1,churns:2, ewr:14.7,ewon:6.4, elost:127.9,eopen:0,   ewn:5, eln:29,atr:1, inv:22,tix:15,g:53,ac:54,tF:27,  tM:37.1,tA:33.8},
+  "Darwin Williams":{t:"Tenured", talk:36,pat:0.37,int:8.5,mono:53,story:107,calls:61,wr:71.1,ret:89.7,green:73,arr:3.8,churns:15,ewr:32.6,ewon:23.1,elost:206.5,eopen:0,   ewn:14,eln:29,atr:10,inv:33,tix:21,g:48,ac:62,tF:21.4,tM:23.5,tA:21.4},
+  "Jory Johnson":   {t:"Tenured", talk:43,pat:0.40,int:8.6,mono:79,story:110,calls:41,wr:71.5,ret:95.1,green:56,arr:3.7,churns:13,ewr:30.8,ewon:76.7,elost:201.4,eopen:2,   ewn:12,eln:27,atr:5, inv:29,tix:10,g:34,ac:40,tF:21.4,tM:23.5,tA:21.4},
+  "Kevin Cook":     {t:"Apr 2026",talk:39,pat:0.22,int:9.7,mono:56,story:97, calls:10,wr:75.8,ret:100, green:76,arr:2.5,churns:0, ewr:25.7,ewon:84.6,elost:227.9,eopen:80.7,ewn:9, eln:26,atr:1, inv:20,tix:13,g:38,ac:43,tF:0,   tM:0,   tA:0},
+  "Maya Kesler":    {t:"Tenured", talk:32,pat:0.48,int:8.0,mono:54,story:105,calls:54,wr:76.4,ret:98.0,green:68,arr:3.1,churns:1, ewr:23.3,ewon:4.5, elost:88.2, eopen:0,   ewn:7, eln:23,atr:6, inv:19,tix:11,g:24,ac:41,tF:10.7,tM:18.8,tA:21.4},
+  "Mike Staes":     {t:"Tenured", talk:42,pat:0.44,int:8.8,mono:88,story:116,calls:69,wr:76.7,ret:96.4,green:79,arr:5.8,churns:3, ewr:27.0,ewon:64.7,elost:223.7,eopen:61.5,ewn:10,eln:27,atr:2, inv:28,tix:28,g:43,ac:56,tF:0,   tM:0,   tA:0},
+  "Nathan Lee":     {t:"Tenured", talk:39,pat:0.45,int:8.0,mono:98,story:126,calls:94,wr:65.0,ret:97.7,green:74,arr:6.6,churns:5, ewr:25.0,ewon:50.3,elost:393.6,eopen:0,   ewn:11,eln:33,atr:0, inv:34,tix:21,g:73,ac:48,tF:33.8,tM:37.1,tA:33.8},
+  "Regan Wong":     {t:"Tenured", talk:35,pat:0.41,int:7.3,mono:87,story:144,calls:187,wr:76.1,ret:97.7,green:71,arr:3.2,churns:3,ewr:30.4,ewon:36.0,elost:199.1,eopen:57.2,ewn:14,eln:32,atr:6, inv:29,tix:17,g:187,ac:46,tF:16.9,tM:29.7,tA:33.8},
+  "Robert Turner":  {t:"Tenured", talk:45,pat:0.74,int:6.7,mono:109,story:133,calls:94,wr:69.4,ret:91.1,green:62,arr:4.1,churns:11,ewr:30.8,ewon:30.8,elost:128.3,eopen:35.6,ewn:12,eln:27,atr:4, inv:30,tix:12,g:26,ac:47,tF:21.4,tM:23.5,tA:21.4}
 };
-const R=Object.keys(D);
-const EC='rgba(233,69,96,0.9)',BC='rgba(59,110,245,0.65)';
-const col=r=>r==='Emily Jones'?EC:BC;
-const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
-const xT={scales:{x:{ticks:{maxRotation:38,font:{size:9}}}}};
+var R=Object.keys(D);
+var EJ="Emily Jones";
+var EC="rgba(233,69,96,0.9)",BC="rgba(59,110,245,0.65)";
+var col=function(r){return r===EJ?EC:BC;};
+var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
+var xT={scales:{x:{ticks:{maxRotation:38,font:{size:9}}}}};
 
-function switchTab(id,el){
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  document.getElementById('p-'+id).classList.add('on');el.classList.add('on');
-}
-function mkBar(id,labels,data,extra={}){
-  const ctx=document.getElementById(id);if(!ctx)return;
-  return new Chart(ctx,{type:'bar',data:{labels,datasets:[{data,backgroundColor:labels.map(col),borderRadius:4,borderSkipped:false}]},options:{...baseOpts,...xT,...extra}});
+function show(id,el){
+  document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("on");});
+  document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("on");});
+  document.getElementById("p-"+id).classList.add("on");
+  el.classList.add("on");
 }
 
-function buildGongTable(){
-  const tb=document.getElementById('tb-gong');
-  [...R].filter(r=>D[r].talk!==null).sort((a,b)=>D[a].talk-D[b].talk).concat(R.filter(r=>D[r].talk===null)).forEach(r=>{
-    const d=D[r],e=r==='Emily Jones',tr=document.createElement('tr');if(e)tr.className='er';
-    tr.innerHTML=`<td><strong>${r}</strong>${e?' ⭐':''}</td><td>${d.talk!==null?(d.talk*100).toFixed(1)+'%':'—'}</td><td style="color:var(--g);font-weight:600;">${d.talk!==null?((1-d.talk)*100).toFixed(1)+'%':'—'}</td><td>${d.patience!==null?d.patience.toFixed(2):'—'}</td><td>${d.inter!==null?d.inter.toFixed(1):'—'}</td><td>${d.mono!==null?Math.round(d.mono)+'s':'—'}</td><td style="color:var(--b);">${d.story!==null?Math.round(d.story)+'s':'—'}</td><td>${d.calls}</td>`;
-    tb.appendChild(tr);
-  });
+function mkBar(id,labels,data,extra){
+  var ctx=document.getElementById(id);if(!ctx)return;
+  extra=extra||{};
+  return new Chart(ctx,{type:"bar",data:{labels:labels,datasets:[{data:data,backgroundColor:labels.map(col),borderRadius:4,borderSkipped:false}]},options:Object.assign({},base,xT,extra)});
 }
 
-function buildExpansionTable(){
-  const tb=document.getElementById('tb-expansion');
-  [...R].sort((a,b)=>D[b].expWR-D[a].expWR).forEach(r=>{
-    const d=D[r],e=r==='Emily Jones',tr=document.createElement('tr');if(e)tr.className='er';
-    const wrc=d.expWR>=35?'var(--g)':d.expWR>=28?'var(--o)':'var(--e)';
-    const avg=d.expWonN>0?(d.expWon/d.expWonN):0;
-    tr.innerHTML=`<td><strong>${r}</strong>${e?' ⭐':''}</td><td>${d.expWonN}</td><td>${d.expLostN}</td><td>${R.find(x=>x===r)?Object.values(D).find((_,i)=>Object.keys(D)[i]===r).expOpen?'Yes':'—':'—'}</td><td style="font-weight:700;color:${wrc};">${d.expWR}%</td><td style="font-weight:700;">$${(d.expWon/1000).toFixed(1)}K</td><td>$${(d.expLost/1000).toFixed(1)}K</td><td>${d.expOpen>0?'$'+(d.expOpen/1000).toFixed(1)+'K':'—'}</td><td>$${(avg/1000).toFixed(1)}K</td>`;
-    tb.appendChild(tr);
-  });
+function buildAll(){
+  var ewrS=[].concat(R).sort(function(a,b){return D[b].ewr-D[a].ewr;});
+  var chS=[].concat(R).sort(function(a,b){return D[b].churns-D[a].churns;});
+  var atrS=[].concat(R).sort(function(a,b){return D[b].atr-D[a].atr;});
+  var wrS=[].concat(R).sort(function(a,b){return D[b].wr-D[a].wr;});
+  var ewonS=[].concat(R).sort(function(a,b){return D[b].ewon-D[a].ewon;});
+  var invS=[].concat(R).sort(function(a,b){return D[b].inv-D[a].inv;});
+  var retS=[].concat(R).sort(function(a,b){return D[b].ret-D[a].ret;});
+
+  function lbl(r){return r===EJ?r+" ⭐":r;}
+
+  mkBar("c-expwr-ov",ewrS.map(lbl),ewrS.map(function(r){return D[r].ewr;}),{scales:{y:{min:10,max:42,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-atrisk-ov",atrS.map(lbl),atrS.map(function(r){return D[r].atr;}));
+  mkBar("c-churns-ov",chS.map(lbl),chS.map(function(r){return D[r].churns;}));
+
+  var rR=R.filter(function(r){return D[r].tA>0;}).sort(function(a,b){return D[b].tA-D[a].tA;});
+  mkBar("c-ramp-ov",rR.map(lbl),rR.map(function(r){return D[r].tA;}),{scales:{y:{ticks:{callback:function(v){return "$"+v+"K";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+
+  var tR=R.filter(function(r){return D[r].talk!==null;}).sort(function(a,b){return D[a].talk-D[b].talk;});
+  mkBar("c-talk",tR.map(lbl),tR.map(function(r){return D[r].talk;}),{scales:{y:{min:28,max:50,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+
+  var callS=[].concat(R).sort(function(a,b){return D[b].calls-D[a].calls;});
+  mkBar("c-calls",callS.map(lbl),callS.map(function(r){return D[r].calls;}));
+
+  mkBar("c-expwr-sfdc",ewrS.map(lbl),ewrS.map(function(r){return D[r].ewr;}),{scales:{y:{min:10,max:42,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-expwon-sfdc",ewonS.map(lbl),ewonS.map(function(r){return D[r].ewon;}),{scales:{y:{ticks:{callback:function(v){return "$"+v+"K";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-churns-sfdc",chS.map(lbl),chS.map(function(r){return D[r].churns;}));
+  mkBar("c-atrisk-sfdc",atrS.map(lbl),atrS.map(function(r){return D[r].atr;}));
+  mkBar("c-ret",retS.map(lbl),retS.map(function(r){return D[r].ret;}),{scales:{y:{min:86,max:102,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-arr",[].concat(R).sort(function(a,b){return D[b].arr-D[a].arr;}).map(function(r){return lbl(r);}),R.sort(function(a,b){return D[b].arr-D[a].arr;}).map(function(r){return D[r].arr;}),{scales:{y:{ticks:{callback:function(v){return "$"+v+"M";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-green",[].concat(R).sort(function(a,b){return D[b].green-D[a].green;}).map(function(r){return lbl(r);}),R.sort(function(a,b){return D[b].green-D[a].green;}).map(function(r){return D[r].green;}),{scales:{y:{min:50,max:85,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-invoice",invS.map(lbl),invS.map(function(r){return D[r].inv;}));
+  mkBar("c-wr",wrS.map(lbl),wrS.map(function(r){return D[r].wr;}),{scales:{y:{min:60,max:80,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+  mkBar("c-expwr3",ewrS.map(lbl),ewrS.map(function(r){return D[r].ewr;}),{scales:{y:{min:10,max:42,ticks:{callback:function(v){return v+"%";}}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
+
+  var comp=[].concat(R).map(function(r){var d=D[r];var t=d.talk||39;return{r:r,s:((d.wr-65)/15*100)*.25+((d.ret-87)/13*100)*.20+(d.ewr/37*100)*.20+(d.atr/18*100)*.15+((50-t)/20*100)*.10+((15-d.churns)/15*100)*.10};}).sort(function(a,b){return b.s-a.s;});
+  mkBar("c-comp",comp.map(function(c){return lbl(c.r);}),comp.map(function(c){return +c.s.toFixed(1);}));
+
+  new Chart(document.getElementById("c-scatter"),{type:"scatter",data:{datasets:[{data:R.map(function(r){return{x:D[r].ewon,y:D[r].churns};}),backgroundColor:R.map(col),pointRadius:R.map(function(r){return r===EJ?9:6;})}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return R[ctx.dataIndex]+": $"+ctx.raw.x+"K won, "+ctx.raw.y+" churns";}}}},scales:{x:{title:{display:true,text:"Exp.ARR Won ($K)",font:{size:9}}},y:{title:{display:true,text:"Churns Q1",font:{size:9}}}}}});
+
+  buildTables();
 }
 
-function buildChurnTable(){
-  const tb=document.getElementById('tb-churn');
-  const data=[
-    ['Maya Kesler',1,'Unknown','—','Minimal structural risk ✓'],
-    ['Emily Jones',4,'Unknown (3)','Bad Product Fit (1)','Mostly undiagnosed, low count ✓'],
-    ['Charlie Passannante',2,'Price/Too Expensive (2)','—','Addressable with value messaging ⚠️'],
-    ['Mike Staes',3,'Unknown (3)','—','Investigate causes 🔍'],
-    ['Regan Wong',3,'Acquired (1)','Board Decision (1)','Mostly external ✓'],
-    ['Nathan Lee',5,'Price (2)','No Longer Fit (1)','Price + fit issues ⚠️'],
-    ['Ben Johnson',6,'Acquired (2)','Bad Sale (1)','Bad Sale = Sales handoff issue 🔴'],
-    ['Robert Turner',11,'Acquired (4)','Never Implemented (2)','Never Impl. = Onboarding failure 🔴'],
-    ['Jory Johnson',13,'Unknown (3)','Product Adoption Issues (2)','Adoption = Onboarding failure 🔴'],
-    ['Darwin Williams',15,'Acquired (3)','Auto Dunning (2)','Dunning = Payment health risk 🔴'],
-  ];
-  data.forEach(([am,n,c1,c2,flag])=>{
-    const e=am==='Emily Jones',tr=document.createElement('tr');if(e)tr.className='er';
-    const color=n<=2?'var(--g)':n<=6?'var(--o)':'var(--e)';
-    tr.innerHTML=`<td><strong>${am}</strong>${e?' ⭐':''}</td><td style="font-weight:700;color:${color};">${n}</td><td>${c1}</td><td>${c2}</td><td>${flag}</td>`;
-    tb.appendChild(tr);
-  });
+function buildTables(){
+  var tg=document.getElementById("tb-gong");
+  if(tg){tg.innerHTML="";
+    var tR2=R.filter(function(r){return D[r].talk!==null;}).sort(function(a,b){return D[a].talk-D[b].talk;}).concat(R.filter(function(r){return D[r].talk===null;}));
+    tR2.forEach(function(r){var d=D[r];var e=r===EJ;var tr=document.createElement("tr");if(e)tr.className="er";tr.innerHTML="<td><strong>"+r+"</strong>"+(e?" ⭐":"")+"</td><td>"+(d.talk!==null?d.talk+"%":"—")+"</td><td style='color:var(--g);font-weight:600;'>"+(d.talk!==null?(100-d.talk)+"%":"—")+"</td><td>"+(d.pat!==null?d.pat.toFixed(2):"—")+"</td><td>"+(d.int!==null?d.int.toFixed(1):"—")+"</td><td>"+(d.mono!==null?d.mono+"s":"—")+"</td><td style='color:var(--b);'>"+(d.story!==null?d.story+"s":"—")+"</td><td>"+d.calls+"</td>";tg.appendChild(tr);});
+  }
+  var te=document.getElementById("tb-exp");
+  if(te){te.innerHTML="";
+    [].concat(R).sort(function(a,b){return D[b].ewr-D[a].ewr;}).forEach(function(r){var d=D[r];var e=r===EJ;var tr=document.createElement("tr");if(e)tr.className="er";var wrc=d.ewr>=35?"var(--g)":d.ewr>=28?"var(--o)":"var(--e)";var avg=d.ewn>0?+(d.ewon/d.ewn).toFixed(1):0;tr.innerHTML="<td><strong>"+r+"</strong>"+(e?" ⭐":"")+"</td><td>"+d.ewn+"</td><td>"+d.eln+"</td><td style='font-weight:700;color:"+wrc+";'>"+d.ewr+"%</td><td style='font-weight:700;'>$"+d.ewon+"K</td><td>$"+d.elost+"K</td><td>"+(d.eopen>0?"$"+d.eopen+"K":"—")+"</td><td>$"+avg+"K</td>";te.appendChild(tr);});
+  }
+  var ta=document.getElementById("tb-act");
+  if(ta){ta.innerHTML="";
+    [].concat(R).sort(function(a,b){return D[b].atr-D[a].atr;}).forEach(function(r){var d=D[r];var e=r===EJ;var tr=document.createElement("tr");if(e)tr.className="er";var ac=d.atr>=10?"var(--g)":d.atr>=5?"var(--o)":"var(--e)";var ratio=d.inv>0?+(d.atr/d.inv*100).toFixed(0)+"%":"0%";tr.innerHTML="<td><strong>"+r+"</strong>"+(e?" ⭐":"")+"</td><td>"+d.g+"</td><td>"+d.inv+"</td><td style='font-weight:700;color:"+ac+";'>"+d.atr+"</td><td>"+d.tix+"</td><td>"+d.ac+"</td><td>"+ratio+"</td>";ta.appendChild(tr);});
+  }
+  var tt=document.getElementById("tb-team");
+  if(tt){tt.innerHTML="";
+    [].concat(R).sort(function(a,b){return D[b].wr-D[a].wr;}).forEach(function(r,i){var d=D[r];var e=r===EJ;var rk=i+1;var tr=document.createElement("tr");if(e)tr.className="er";var rkcls=rk===1?"rk1":rk===2?"rk2":rk===3?"rk3":"rkn";var rc=d.ret>=97?"var(--g)":d.ret>=95?"var(--o)":"var(--e)";var wc=d.wr>=75?"var(--g)":d.wr>=72?"var(--o)":"var(--e)";var ec=d.ewr>=35?"var(--g)":d.ewr>=28?"var(--o)":"var(--e)";var cc=d.churns<=2?"var(--g)":d.churns<=6?"var(--o)":"var(--e)";var ac=d.atr>=10?"var(--g)":d.atr>=5?"var(--o)":"var(--e)";tr.innerHTML="<td><span class='rk "+rkcls+"'>"+rk+"</span></td><td><strong>"+r+"</strong>"+(e?" ⭐":"")+"</td><td style='font-size:9px;'>"+d.t+"</td><td style='font-weight:700;color:"+rc+";'>"+d.ret+"%</td><td style='font-weight:700;color:"+wc+";'>"+d.wr+"%</td><td style='font-weight:700;color:"+ec+";'>"+d.ewr+"%</td><td>$"+d.ewon+"K</td><td>"+(d.talk!==null?d.talk+"%":"—")+"</td><td style='font-weight:700;color:"+ac+";'>"+d.atr+"</td><td style='font-weight:700;color:"+cc+";'>"+d.churns+"</td><td>"+d.calls+"</td><td>"+d.green+"%</td><td>$"+d.arr+"M</td>";tt.appendChild(tr);});
+  }
+  buildCoaching();
 }
 
-function buildActivityTable(){
-  const tb=document.getElementById('tb-activity');
-  [...R].sort((a,b)=>D[b].atRisk-D[a].atRisk).forEach(r=>{
-    const d=D[r],e=r==='Emily Jones',tr=document.createElement('tr');if(e)tr.className='er';
-    const ratio=d.invoice>0?(d.atRisk/d.invoice*100).toFixed(0)+'%':'0%';
-    const ac=d.atRisk>=10?'var(--g)':d.atRisk>=5?'var(--o)':'var(--e)';
-    tr.innerHTML=`<td><strong>${r}</strong>${e?' ⭐':''}</td><td>${d.gong}</td><td>${d.invoice}</td><td style="font-weight:700;color:${ac};">${d.atRisk}</td><td>${d.tickets}</td><td>${d.accts}</td><td>${ratio}</td>`;
-    tb.appendChild(tr);
-  });
-}
-
-function buildTeamTable(){
-  const tb=document.getElementById('tb-team');
-  [...R].sort((a,b)=>D[b].wr-D[a].wr).forEach((r,i)=>{
-    const d=D[r],e=r==='Emily Jones',rk=i+1,tr=document.createElement('tr');if(e)tr.className='er';
-    const rkcls=rk===1?'rk1':rk===2?'rk2':rk===3?'rk3':'rkn';
-    const retc=d.ret>=97?'var(--g)':d.ret>=95?'var(--o)':'var(--e)';
-    const wrc=d.wr>=75?'var(--g)':d.wr>=72?'var(--o)':'var(--e)';
-    const ewc=d.expWR>=35?'var(--g)':d.expWR>=28?'var(--o)':'var(--e)';
-    const cc=d.churns<=2?'var(--g)':d.churns<=6?'var(--o)':'var(--e)';
-    const ac=d.atRisk>=10?'var(--g)':d.atRisk>=5?'var(--o)':'var(--e)';
-    tr.innerHTML=`<td><span class="rk ${rkcls}">${rk}</span></td><td><strong>${r}</strong>${e?' ⭐':''}</td><td style="font-size:9px;">${d.tenure}</td><td style="font-weight:700;color:${retc};">${d.ret}%</td><td style="font-weight:700;color:${wrc};">${d.wr}%</td><td style="font-weight:700;color:${ewc};">${d.expWR}%</td><td>$${(d.expWon/1000).toFixed(1)}K</td><td>${d.talk!==null?(d.talk*100).toFixed(0)+'%':'—'}</td><td style="font-weight:700;color:${ac};">${d.atRisk}</td><td style="font-weight:700;color:${cc};">${d.churns}</td><td>${d.calls}</td><td>${d.green}%</td><td>$${(d.arr/1e6).toFixed(1)}M</td>`;
-    tb.appendChild(tr);
-  });
-}
-
-const COACH={
-  'Jory Johnson':{gap:'13 churns (#2 worst), 30.8% expansion ARR WR, Product Adoption Issues as churn cause','rec':"Adoption churn = customers never get value. Add 30/60/90 day product usage check-ins. Study Emily's at-risk cadence — 5 interventions for 19 at-risk accounts is insufficient coverage."},
-  'Robert Turner':{gap:'11 churns, 2 Never Implemented = pure onboarding failure, 30 at-risk accounts with only 4 interventions','rec':"Schedule mandatory implementation check-in at day 14 and day 45 post-sale. 30 at-risk accounts, 4 interventions = dangerously reactive. Emily's ratio is 18:4 — Robert needs to triple his at-risk response rate."},
-  'Darwin Williams':{gap:'15 churns (worst), 2 Auto Dunning = payment failure churn, Bad Product Fit recurring','rec':"Dunning churn is preventable: set up alerts for first failed payment and call same day — don't wait for SFDC to flag it. Bad Product Fit at point of churn suggests qualification issues — tighten Sales-to-CS handoff criteria."},
-  'Nathan Lee':{gap:'0 at-risk interventions despite 34 invoice alerts, 21 at-risk accounts, lowest expansion ARR WR (25.0%) despite highest volume','rec':"Nathan is the clearest example of activity without strategy. Zero at-risk interventions is the team's biggest structural gap. Map at-risk accounts weekly — high call volume means nothing if at-risk accounts aren't being covered. Also: pipeline qualification on expansion — losing $393K in expansion ARR suggests poor deal selection."},
-  'Maya Kesler':{gap:'Best retention (98%), only 1 churn, strong listener (31.6% talk ratio) — but lowest expansion ARR ($4.5K won)','rec':"Maya is the team's best at retention. Pair her with Jory and Robert for call shadowing. Her expansion ARR ($4.5K) is well below her potential — she has the account trust to push harder on upsell conversations."},
-  'Ben Johnson':{gap':'6 churns including Bad Sale and Bad Product Fit — upstream qualification issues','rec':"'Bad Sale' as a churn cause is a Sales-to-CS handoff problem. Joint deal review with Sales for any account >$25K ARR before close. His at-risk intervention rate (2) is also very low for 22 at-risk accounts."},
-  'Charlie Passannante':{gap':'0 Gong recordings in 90 days — complete blind spot; 2 price churns','rec':"Gong recording compliance is non-negotiable. Price churn is addressable — teach customers to articulate ROI before renewals, not after. Charlie's 80.7% green% and 73.7% win rate suggest he's performing well, but zero visibility creates risk."},
-  'Mike Staes':{gap':'$64.7K expansion ARR won but 42% talk ratio may be leaving deals on the table','rec':"Mike's expansion wins are solid but he's talking 42% of every call. Study Emily's 35% and the customer story length difference (116s vs 132s). More space for customers to talk = more expansion signals surfaced."},
-  'Regan Wong':{gap':'Best expansion ARR WR % would be Regan (30.4% by ARR) if Emily weren\'t in the data — but 23 at-risk accounts with only 6 interventions','rec':"Regan's 187 Gong calls is extraordinary but her at-risk coverage (6 interventions / 23 at-risk accounts) is thin. Redirect some call time toward explicitly structured at-risk touchpoints. Her customer trust (143s story length, team's highest) is an asset to deploy more deliberately."},
-  'Kevin Cook':{gap':'April 2026 start — too early for full evaluation. Strong early indicators.','rec':"Kevin's 100% gross retention and 75.8% overall win rate are exceptional early signals. Focus Q1-Q2 on Gong recording compliance and building the at-risk intervention habit early. Re-evaluate full coaching plan at 90-day mark (July 2026)."},
+var COACH={
+  "Jory Johnson":["13 churns, Product Adoption issues, 30.8% exp.WR","Adoption churn = customers never got value. 30/60/90-day usage check-ins. Emily-level at-risk coverage needed (currently 5 for 19 at-risk accounts)."],
+  "Robert Turner":["11 churns, 2 Never Implemented = onboarding failures, 30 at-risk / 4 interventions","Never Implemented is 100% preventable. Day 14 + day 45 implementation checks. Must triple at-risk intervention rate."],
+  "Darwin Williams":["15 churns (worst), 2 Auto Dunning = payment failures","Call on first failed payment same day. Bad Product Fit suggests Sales-to-CS qualification failures."],
+  "Nathan Lee":["0 at-risk interventions despite 34 invoice alerts; 25% expansion WR with most pipeline","Activity without strategy. Zero at-risk actions = predictive churn. $393K in lost expansion pipeline is an efficiency crisis."],
+  "Maya Kesler":["Best retention (98%), only 1 churn — but $4.5K expansion won","Pair with Jory and Robert for call shadowing. Expansion ($4.5K) is far below potential — she has the account trust to push harder on upsells."],
+  "Ben Johnson":["6 churns including Bad Sale — Sales-to-CS handoff issue; 2 at-risk actions for 22 accounts","Pre-close account review for accounts >$25K ARR. At-risk rate critically low."],
+  "Charlie Passannante":["0 Gong recordings — zero coaching visibility","Gong compliance immediate priority. Cannot coach what cannot be measured."],
+  "Mike Staes":["42% talk ratio with largest ARR book","Reducing to Emily-level (35%) would surface more expansion signals and customer stories."],
+  "Regan Wong":["Best expansion WR (30.4%) but 23 at-risk accounts / 6 interventions","Redirect some of 187 Gong calls toward structured at-risk touchpoints."],
+  "Kevin Cook":["April 2026 start — exceptional early signals (100% ret, 75.8% WR)","Build Gong recording cadence. Re-evaluate at 90-day mark July 2026."]
 };
 
 function buildCoaching(){
-  const c=document.getElementById('coaching-cards');
-  Object.entries(COACH).forEach(([r,cd])=>{
-    const d=D[r],div=document.createElement('div');div.className='rc';
-    div.innerHTML=`<div class="rn">${r}</div><div class="rm">${d.tenure} · Win Rate: <strong>${d.wr}%</strong> · Exp.ARR WR: <strong>${d.expWR}%</strong> · Churns: <strong style="color:${d.churns<=2?'var(--g)':d.churns<=6?'var(--o)':'var(--e)'}">${d.churns}</strong> · At-Risk Actions: <strong>${d.atRisk}</strong></div><div class="ri"><strong style="color:var(--mu);margin-right:3px;">Gap:</strong>${cd.gap}</div><div class="ri"><strong style="color:var(--e);margin-right:3px;">Action:</strong>${cd.rec}</div>`;
-    c.appendChild(div);
-  });
+  var c=document.getElementById("cc-cards");if(!c)return;c.innerHTML="";
+  Object.keys(COACH).forEach(function(r){var d=D[r];var arr=COACH[r];var div=document.createElement("div");div.className="rc";var cc=d.churns<=2?"var(--g)":d.churns<=6?"var(--o)":"var(--e)";var ac=d.atr>=10?"var(--g)":d.atr>=5?"var(--o)":"var(--e)";div.innerHTML="<div class='rn'>"+r+"</div><div class='rm'>"+d.t+" · WR: <strong>"+d.wr+"%</strong> · Exp.WR: <strong>"+d.ewr+"%</strong> · Churns: <strong style='color:"+cc+";'>"+d.churns+"</strong> · At-Risk: <strong style='color:"+ac+";'>"+d.atr+"</strong></div><div class='ri'><strong style='color:var(--mu);'>Gap: </strong>"+arr[0]+"</div><div class='ri'><strong style='color:var(--e);'>Action: </strong>"+arr[1]+"</div>";c.appendChild(div);});
 }
 
-window.addEventListener('load',()=>{
-  buildGongTable(); buildExpansionTable(); buildChurnTable(); buildActivityTable(); buildTeamTable(); buildCoaching();
-
-  const ewrSorted=[...R].sort((a,b)=>D[b].expWR-D[a].expWR);
-  const chSorted=[...R].sort((a,b)=>D[b].churns-D[a].churns);
-
-  // Overview
-  mkBar('c-expwr-ov',ewrSorted,ewrSorted.map(r=>D[r].expWR),{scales:{y:{min:10,max:42,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  mkBar('c-atrisk-ov',R,R.map(r=>D[r].atRisk),{scales:{x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  new Chart(document.getElementById('c-churns-ov'),{type:'bar',data:{labels:chSorted,datasets:[{data:chSorted.map(r=>D[r].churns),backgroundColor:chSorted.map(r=>r==='Emily Jones'?EC:'rgba(245,158,11,0.7)'),borderRadius:4}]},options:{...baseOpts,...xT}});
-  const rR=R.filter(r=>D[r].tFeb>0);
-  new Chart(document.getElementById('c-ramp-ov'),{type:'line',data:{labels:['February','March','April'],datasets:rR.map(r=>({label:r,data:[D[r].tFeb,D[r].tMar,D[r].tApr],borderColor:r==='Emily Jones'?'#e94560':'rgba(150,160,200,0.3)',backgroundColor:'transparent',borderWidth:r==='Emily Jones'?3:1,pointRadius:r==='Emily Jones'?5:2,tension:0.35}))},options:{...baseOpts,scales:{y:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'}}},plugins:{legend:{display:false}}}});
-
-  // Gong
-  const rReps=R.filter(r=>D[r].talk!==null);
-  const avg=k=>rReps.reduce((s,r)=>s+D[r][k],0)/rReps.length;
-  new Chart(document.getElementById('c-radar'),{type:'radar',data:{labels:['Listening','Patience','Interactivity','Concise','Cust.Story'],datasets:[{label:'Emily',data:[(1-D['Emily Jones'].talk)*100,D['Emily Jones'].patience*100,D['Emily Jones'].inter*10,(1-D['Emily Jones'].mono/150)*100,D['Emily Jones'].story/1.8],borderColor:'#e94560',backgroundColor:'rgba(233,69,96,0.15)',borderWidth:2,pointRadius:3},{label:'Team Avg',data:[(1-avg('talk'))*100,avg('patience')*100,avg('inter')*10,(1-avg('mono')/150)*100,avg('story')/1.8],borderColor:'#3b6ef5',backgroundColor:'rgba(59,110,245,0.08)',borderWidth:1.5,borderDash:[4,4],pointRadius:2}]},options:{...baseOpts,scales:{r:{min:0,max:100,ticks:{display:false},pointLabels:{font:{size:9}}}},plugins:{legend:{display:true,labels:{font:{size:9},boxWidth:10}}}}});
-  mkBar('c-calls',R,R.map(r=>D[r].calls));
-
-  // SFDC
-  mkBar('c-exp-wr-sfdc',ewrSorted,ewrSorted.map(r=>D[r].expWR),{scales:{y:{min:10,max:42,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  const expSorted=[...R].sort((a,b)=>D[b].expWon-D[a].expWon);
-  mkBar('c-exp-won-sfdc',expSorted,expSorted.map(r=>D[r].expWon),{scales:{y:{ticks:{callback:v=>'$'+(v/1000).toFixed(0)+'K'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  mkBar('c-churn-am',chSorted,chSorted.map(r=>D[r].churns),{scales:{x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  new Chart(document.getElementById('c-churn-cause'),{type:'doughnut',data:{labels:['Unknown','Acquired','Price/Exp.','No Longer Fit','Bad Fit','Auto Dunning','Never Impl.','Adoption','Other'],datasets:[{data:[19,12,7,5,4,3,3,2,4],backgroundColor:['#94a3b8','#64748b','#e94560','#f59e0b','#ef4444','#f97316','#8b5cf6','#3b6ef5','#22c55e'],borderWidth:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{font:{size:9},boxWidth:10}}}}});
-  mkBar('c-atrisk-sfdc',R,R.map(r=>D[r].atRisk),{scales:{x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  const invSorted=[...R].sort((a,b)=>D[b].invoice-D[a].invoice);
-  new Chart(document.getElementById('c-invoice'),{type:'bar',data:{labels:invSorted,datasets:[{data:invSorted.map(r=>D[r].invoice),backgroundColor:invSorted.map(r=>r==='Emily Jones'?EC:'rgba(245,158,11,0.7)'),borderRadius:4}]},options:{...baseOpts,...xT}});
-
-  // Portfolio
-  mkBar('c-ret',R,R.map(r=>D[r].ret),{scales:{y:{min:86,max:102,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  mkBar('c-arr',R,R.map(r=>D[r].arr),{scales:{y:{ticks:{callback:v=>'$'+(v/1e6).toFixed(1)+'M'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  mkBar('c-green',R,R.map(r=>D[r].green),{scales:{y:{min:50,max:85,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  new Chart(document.getElementById('c-churn-vs-atrisk'),{type:'scatter',data:{datasets:[{data:R.map(r=>({x:D[r].atRisk,y:D[r].churns})),backgroundColor:R.map(col),pointRadius:R.map(r=>r==='Emily Jones'?9:6)}]},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${R[ctx.dataIndex]}: ${ctx.raw.x} interventions, ${ctx.raw.y} churns`}}},scales:{x:{title:{display:true,text:'At-Risk Interventions',font:{size:9}}},y:{title:{display:true,text:'Churns Q1',font:{size:9}}}}}});
-
-  // Win Rates
-  const wrS=[...R].sort((a,b)=>D[b].wr-D[a].wr);
-  mkBar('c-wr',wrS,wrS.map(r=>D[r].wr),{scales:{y:{min:60,max:80,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  mkBar('c-exp-wr3',ewrSorted,ewrSorted.map(r=>D[r].expWR),{scales:{y:{min:10,max:42,ticks:{callback:v=>v+'%'}},x:{ticks:{maxRotation:38,font:{size:9}}}}});
-  new Chart(document.getElementById('c-exp-wonlost'),{type:'bar',data:{labels:R,datasets:[{label:'Won ARR',data:R.map(r=>D[r].expWon),backgroundColor:R.map(r=>r==='Emily Jones'?EC:'rgba(34,197,94,0.7)'),borderRadius:4,borderSkipped:false},{label:'Lost ARR',data:R.map(r=>-D[r].expLost),backgroundColor:R.map(r=>r==='Emily Jones'?'rgba(233,69,96,0.35)':'rgba(239,68,68,0.45)'),borderRadius:4}]},options:{...baseOpts,maintainAspectRatio:false,scales:{x:{stacked:false,ticks:{maxRotation:38,font:{size:9}}},y:{ticks:{callback:v=>'$'+(Math.abs(v)/1000).toFixed(0)+'K'}}},plugins:{legend:{display:true,labels:{font:{size:9},boxWidth:10}}}}});
-
-  // Team
-  const comp=[...R].map(r=>{const d=D[r];return{r,s:((d.wr-65)/15*100)*.25+((d.ret-87)/13*100)*.20+(d.expWR/37*100)*.20+(d.atRisk/18*100)*.15+(d.talk!==null?(1-d.talk)*100:60)*.10+((15-d.churns)/15*100)*.10};}).sort((a,b)=>b.s-a.s);
-  new Chart(document.getElementById('c-comp'),{type:'bar',data:{labels:comp.map(c=>c.r),datasets:[{data:comp.map(c=>+c.s.toFixed(1)),backgroundColor:comp.map(c=>c.r==='Emily Jones'?EC:BC),borderRadius:4}]},options:{...baseOpts,...xT}});
-  new Chart(document.getElementById('c-bubble'),{type:'bubble',data:{datasets:R.map(r=>({label:r,data:[{x:D[r].arr/1e6,y:D[r].wr,r:Math.max(5,D[r].arr/750000)}],backgroundColor:r==='Emily Jones'?'rgba(233,69,96,0.8)':'rgba(59,110,245,0.5)',borderColor:r==='Emily Jones'?'#e94560':'rgba(59,110,245,0.7)'}))},options:{...baseOpts,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: $${ctx.raw.x.toFixed(1)}M ARR, ${ctx.raw.y}% WR`}}},scales:{x:{title:{display:true,text:'Renewable ARR ($M)',font:{size:9}}},y:{title:{display:true,text:'Win Rate %',font:{size:9}},min:60,max:82}}}});
-});
+window.addEventListener("load",buildAll);
 </script>
 </body>
 </html>
